@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.venv/
+.npm-cache/
+.azure-cli/
+__pycache__/
+.DS_Store

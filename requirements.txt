@@ -1,0 +1,9 @@
+# Python backend tools for the optional API.
+# The first version of this project does not need PostgreSQL yet because the quiz can run in the browser.
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+
+# Add these later only if you decide to save scores, users, or experiment results in PostgreSQL:
+# sqlalchemy==2.0.43
+# psycopg[binary]==3.2.9
+# alembic==1.16.4
