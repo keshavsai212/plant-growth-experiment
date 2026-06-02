@@ -11,10 +11,16 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 button {
   font: inherit;
+}
+
+button,
+input {
+  max-width: 100%;
 }
 
 .app-shell {
@@ -32,9 +38,12 @@ button {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 0 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .tab-button {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -60,6 +69,7 @@ button {
 .index-page,
 .lab-page,
 .experiment-panel {
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto;
   border: 1px solid rgba(95, 255, 183, 0.22);
@@ -86,6 +96,7 @@ button {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0;
+  min-width: 0;
 }
 
 h1,
@@ -150,6 +161,15 @@ h1 {
   align-items: center;
   gap: 10px;
   color: #7effc6;
+  min-width: 0;
+}
+
+.index-heading h2,
+.resource-title h2,
+.quiz-area h3,
+.message,
+.choice-button {
+  overflow-wrap: anywhere;
 }
 
 .index-item p,
@@ -373,6 +393,7 @@ h1 {
   gap: 10px;
   max-height: 690px;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .resource-control {
@@ -411,6 +432,7 @@ h1 {
 }
 
 .resource-actions input {
+  min-width: 0;
   accent-color: #38ff9d;
 }
 
@@ -1642,6 +1664,398 @@ h1 {
 
   .seed-dispersal span:nth-child(3) {
     animation-name: seed-drift-three-mobile;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 15px;
+  }
+
+  .app-shell {
+    min-height: 100svh;
+    padding: 10px;
+  }
+
+  .tab-bar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    gap: 8px;
+    padding: 0 0 10px;
+    background: linear-gradient(180deg, rgba(6, 16, 13, 0.98), rgba(6, 16, 13, 0.82));
+  }
+
+  .tab-button {
+    min-height: 48px;
+    padding: 9px 12px;
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .index-page,
+  .lab-page,
+  .experiment-panel {
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 12px 38px rgba(0, 255, 157, 0.08), inset 0 0 20px rgba(94, 255, 183, 0.035);
+  }
+
+  h1 {
+    margin-bottom: 12px;
+    font-size: 2rem;
+    line-height: 1.05;
+  }
+
+  .top-bar {
+    align-items: center;
+  }
+
+  .top-bar h2 {
+    font-size: 1.55rem;
+    line-height: 1.08;
+  }
+
+  .icon-button {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.76rem;
+  }
+
+  .index-hero {
+    gap: 14px;
+    padding-bottom: 14px;
+  }
+
+  .index-item {
+    padding: 12px;
+  }
+
+  .index-item.expanded {
+    gap: 10px;
+  }
+
+  .index-item.expanded h2 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .index-item ul {
+    padding-left: 18px;
+    line-height: 1.42;
+  }
+
+  .term-row {
+    gap: 6px;
+  }
+
+  .term-row span {
+    padding: 5px 8px;
+    font-size: 0.76rem;
+  }
+
+  .mini-diagram {
+    min-height: 205px;
+  }
+
+  .diagram-sun {
+    top: 18px;
+    right: 22px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .diagram-stem {
+    bottom: 48px;
+    height: 112px;
+  }
+
+  .diagram-leaf {
+    width: 64px;
+    height: 30px;
+    top: 82px;
+  }
+
+  .diagram-leaf.right {
+    top: 112px;
+  }
+
+  .diagram-label {
+    font-size: 0.68rem;
+  }
+
+  .photosynthesis {
+    left: 12px;
+    top: 18px;
+  }
+
+  .transport {
+    right: 12px;
+    bottom: 14px;
+  }
+
+  .progress-track {
+    margin: 12px 0;
+  }
+
+  .plant-scene {
+    height: 238px;
+    background-size: 32px 32px, 32px 32px, auto;
+  }
+
+  .sun {
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .cloud-one {
+    top: 48px;
+    left: 22px;
+    width: 76px;
+  }
+
+  .cloud-two {
+    top: 88px;
+    left: 108px;
+    width: 62px;
+  }
+
+  .soil {
+    height: 76px;
+  }
+
+  .seed {
+    bottom: 52px;
+  }
+
+  .plant {
+    bottom: 58px;
+    max-height: 136px;
+  }
+
+  .leaf {
+    width: 36px;
+    height: 19px;
+  }
+
+  .flower {
+    top: -11px;
+    width: 18px;
+    height: 18px;
+    box-shadow: 12px 0 #ff5bd8, -12px 0 #ff5bd8, 0 12px #ff5bd8, 0 -12px #ff5bd8, 0 0 20px rgba(255, 91, 216, 0.78);
+  }
+
+  .fruit {
+    width: 28px;
+    height: 34px;
+  }
+
+  .pollen-field {
+    width: 92px;
+    height: 58px;
+  }
+
+  .seed-dispersal {
+    bottom: 74px;
+  }
+
+  .new-seedlings {
+    bottom: 58px;
+  }
+
+  .new-seedlings span:nth-child(1) {
+    left: 18%;
+  }
+
+  .new-seedlings span:nth-child(2) {
+    right: 18%;
+  }
+
+  .message {
+    margin: 12px 0;
+    padding: 12px;
+    line-height: 1.36;
+  }
+
+  .lesson-box {
+    padding: 12px;
+  }
+
+  .factor-chip {
+    align-items: flex-start;
+    line-height: 1.25;
+  }
+
+  .quiz-area h3 {
+    margin: 14px 0 10px;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .choice-button {
+    min-height: 56px;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .lab-header {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .seed-name-field input {
+    min-height: 48px;
+  }
+
+  .lab-simulation,
+  .resource-panel {
+    padding: 12px;
+  }
+
+  .lab-score strong {
+    font-size: 1.3rem;
+  }
+
+  .lab-scene {
+    height: 300px;
+    background-size: 32px 32px, 32px 32px, auto;
+  }
+
+  .lab-sun {
+    top: 22px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .lab-soil {
+    height: 96px;
+  }
+
+  .lab-plant {
+    bottom: 62px;
+  }
+
+  .seed .lab-plant {
+    height: 34px;
+  }
+
+  .sprout .lab-plant {
+    height: 72px;
+  }
+
+  .leafy .lab-plant {
+    height: 118px;
+  }
+
+  .flowering .lab-plant,
+  .life-cycle .lab-plant {
+    height: 142px;
+  }
+
+  .lab-leaf {
+    width: 42px;
+    height: 22px;
+    bottom: 36px;
+  }
+
+  .lab-leaf.upper {
+    bottom: 78px;
+  }
+
+  .lab-flower {
+    top: -10px;
+    width: 18px;
+    height: 18px;
+    box-shadow: 12px 0 #ff5bd8, -12px 0 #ff5bd8, 0 12px #ff5bd8, 0 -12px #ff5bd8, 0 0 20px rgba(255, 91, 216, 0.78);
+  }
+
+  .lab-fruit {
+    width: 28px;
+    height: 34px;
+  }
+
+  .lab-root-network {
+    width: 118px;
+    height: 62px;
+  }
+
+  .resource-panel {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .resource-control {
+    padding: 11px;
+  }
+
+  .resource-title {
+    gap: 8px;
+  }
+
+  .resource-title p {
+    font-size: 0.82rem;
+  }
+
+  .resource-actions {
+    grid-template-columns: 1fr 48px;
+    gap: 8px;
+  }
+
+  .resource-actions input {
+    min-height: 32px;
+  }
+
+  .resource-actions button {
+    grid-column: 1 / -1;
+    min-height: 44px;
+  }
+
+  .reset-lab-button {
+    min-height: 46px;
+  }
+
+  .lab-rays {
+    top: 18px;
+    right: 54px;
+    width: 112px;
+    height: 120px;
+  }
+
+  .lab-rays span {
+    height: 110px;
+  }
+
+  .lab-air {
+    left: 8%;
+    top: 92px;
+    width: 84%;
+  }
+
+  .lab-minerals {
+    left: 30%;
+    right: 30%;
+    height: 94px;
+  }
+
+  .lab-temp-aura,
+  .lab-shield {
+    top: 74px;
+    width: 172px;
+    height: 172px;
+  }
+
+  .lab-space-ring {
+    bottom: 66px;
+    width: 220px;
+    height: 112px;
   }
 }
 
