@@ -18,7 +18,8 @@ import {
   Mountain,
   Bug,
   MoveDiagonal,
-  CloudSun
+  CloudSun,
+  Moon
 } from "lucide-react";
 import "./styles.css";
 
@@ -453,6 +454,9 @@ const startingLabResources = {
 
 function App() {
   const [activeTab, setActiveTab] = useState("experiment");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("plantExperimentTheme") || "dark";
+  });
   const [stage, setStage] = useState(0);
   const [attempts, setAttempts] = useState(0);
   const [status, setStatus] = useState("healthy");
@@ -467,6 +471,14 @@ function App() {
   useEffect(() => {
     setShuffledChoices(shuffleChoices(lessons[stage].choices));
   }, [stage, shuffleKey]);
+
+  useEffect(() => {
+    localStorage.setItem("plantExperimentTheme", theme);
+  }, [theme]);
+
+  function toggleTheme() {
+    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
+  }
 
   function chooseAnswer(choice) {
     if (status === "dead" || status === "complete") return;
@@ -505,9 +517,10 @@ function App() {
   }
 
   const Icon = current.icon;
+  const isLightTheme = theme === "light";
 
   return (
-    <main className="app-shell">
+    <main className={`app-shell theme-${theme}`}>
       <nav className="tab-bar" aria-label="Main sections">
         <button
           className={activeTab === "experiment" ? "tab-button active" : "tab-button"}
@@ -529,6 +542,15 @@ function App() {
         >
           <FlaskConical size={18} />
           My Seed Lab
+        </button>
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${isLightTheme ? "dark" : "light"} mode`}
+          title={`Switch to ${isLightTheme ? "dark" : "light"} mode`}
+        >
+          {isLightTheme ? <Moon size={18} /> : <Sun size={18} />}
+          {isLightTheme ? "Dark" : "Light"}
         </button>
       </nav>
 

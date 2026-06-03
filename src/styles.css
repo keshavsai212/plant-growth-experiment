@@ -66,6 +66,28 @@ input {
   box-shadow: 0 0 22px rgba(74, 255, 176, 0.22);
 }
 
+.theme-toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 10px 16px;
+  border: 1px solid rgba(248, 243, 107, 0.34);
+  border-radius: 8px;
+  background: rgba(28, 24, 8, 0.92);
+  color: #fff4a2;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(248, 243, 107, 0.14);
+}
+
+.theme-toggle:hover {
+  border-color: #f8f36b;
+  box-shadow: 0 0 24px rgba(248, 243, 107, 0.24);
+}
+
 .index-page,
 .lab-page,
 .experiment-panel {
@@ -1392,6 +1414,285 @@ h1 {
   opacity: 0.65;
 }
 
+.theme-light {
+  color: #1f2a22;
+  background:
+    linear-gradient(180deg, #f7fbf2 0%, #e6f0db 100%);
+}
+
+.theme-light .tab-bar {
+  background: transparent;
+}
+
+.theme-light .tab-button,
+.theme-light .theme-toggle,
+.theme-light .icon-button,
+.theme-light .choice-button,
+.theme-light .resource-actions button,
+.theme-light .reset-lab-button {
+  border-color: #b7ccb0;
+  background: #ffffff;
+  color: #223126;
+  box-shadow: none;
+}
+
+.theme-light .tab-button:hover,
+.theme-light .tab-button.active,
+.theme-light .theme-toggle:hover,
+.theme-light .icon-button:hover,
+.theme-light .choice-button:hover:not(:disabled),
+.theme-light .resource-actions button:hover,
+.theme-light .reset-lab-button:hover {
+  border-color: #6da56d;
+  background: #edf6e9;
+  color: #1f4f2d;
+  box-shadow: none;
+}
+
+.theme-light .index-page,
+.theme-light .lab-page,
+.theme-light .experiment-panel,
+.theme-light .index-item,
+.theme-light .lesson-box,
+.theme-light .lab-simulation,
+.theme-light .resource-panel,
+.theme-light .resource-control,
+.theme-light .message {
+  border-color: #c8d8c0;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1f2a22;
+  box-shadow: 0 8px 24px rgba(73, 94, 62, 0.1);
+  backdrop-filter: none;
+}
+
+.theme-light .section-label,
+.theme-light .index-heading,
+.theme-light .factor-chip,
+.theme-light .resource-title,
+.theme-light .seed-name-field,
+.theme-light .lab-score strong {
+  color: #2d6c3d;
+  text-shadow: none;
+}
+
+.theme-light .index-hero p,
+.theme-light .index-item p,
+.theme-light .index-item ul,
+.theme-light .lesson-box p,
+.theme-light .lab-header p,
+.theme-light .resource-title p,
+.theme-light .lab-score {
+  color: #425446;
+}
+
+.theme-light .index-item li::marker {
+  color: #4b8f50;
+}
+
+.theme-light .term-row span,
+.theme-light .diagram-label,
+.theme-light .lab-stage-chip {
+  border-color: #b6cfba;
+  background: #edf6e9;
+  color: #285a32;
+}
+
+.theme-light .progress-track {
+  background: #d8e6d0;
+  box-shadow: none;
+}
+
+.theme-light .progress-fill {
+  background: linear-gradient(90deg, #5fa65f, #9cbc5f);
+  box-shadow: none;
+}
+
+.theme-light .plant-scene,
+.theme-light .mini-diagram,
+.theme-light .lab-scene {
+  border-color: #b8ccb0;
+  background:
+    linear-gradient(rgba(84, 125, 87, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(84, 125, 87, 0.09) 1px, transparent 1px),
+    linear-gradient(#cdeaf2 0 62%, #e1edd4 62% 100%);
+  box-shadow: none;
+}
+
+.theme-light .lab-scene {
+  background:
+    linear-gradient(rgba(84, 125, 87, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(84, 125, 87, 0.09) 1px, transparent 1px),
+    linear-gradient(#cdeaf2 0 66%, #e1edd4 66% 100%);
+}
+
+.theme-light .plant-scene.deficient,
+.theme-light .lab-scene.struggling {
+  box-shadow: none;
+  filter: none;
+}
+
+.theme-light .plant-scene.dead {
+  background:
+    linear-gradient(rgba(101, 82, 70, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(101, 82, 70, 0.08) 1px, transparent 1px),
+    linear-gradient(#d8dcda 0 62%, #d6ceb9 62% 100%);
+  box-shadow: none;
+}
+
+.theme-light .sun,
+.theme-light .lab-sun,
+.theme-light .diagram-sun {
+  background: #f0c84b;
+  box-shadow: none;
+  animation: none;
+}
+
+.theme-light .cloud {
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: none;
+}
+
+.theme-light .soil,
+.theme-light .lab-soil {
+  background: #8b6544;
+  border-top-color: #6b4c32;
+  box-shadow: none;
+}
+
+.theme-light .seed {
+  background: #b98752;
+  box-shadow: none;
+}
+
+.theme-light .plant,
+.theme-light .lab-plant,
+.theme-light .diagram-stem,
+.theme-light .new-seedlings span,
+.theme-light .lab-seedlings span {
+  background: #3f8a46;
+  box-shadow: none;
+}
+
+.theme-light .leaf,
+.theme-light .lab-leaf,
+.theme-light .diagram-leaf,
+.theme-light .new-seedlings span::before,
+.theme-light .new-seedlings span::after,
+.theme-light .lab-seedlings span::before,
+.theme-light .lab-seedlings span::after {
+  background: #56a85c;
+  box-shadow: none;
+}
+
+.theme-light .deficient .plant,
+.theme-light .struggling .lab-plant,
+.theme-light .deficient .leaf,
+.theme-light .struggling .lab-leaf {
+  background: #c9b449;
+  box-shadow: none;
+}
+
+.theme-light .flower,
+.theme-light .lab-flower {
+  background: #d96595;
+  box-shadow: 13px 0 #d96595, -13px 0 #d96595, 0 13px #d96595, 0 -13px #d96595;
+  animation: none;
+}
+
+.theme-light .fruit,
+.theme-light .lab-fruit {
+  background: radial-gradient(circle at 35% 28%, #ffe39a 0 8px, #d96b52 9px 100%);
+  box-shadow: none;
+  animation: fruit-grow 2.8s ease-in-out infinite;
+}
+
+.theme-light .pollen-field i,
+.theme-light .seed-dispersal span {
+  background: #c49b3c;
+  box-shadow: none;
+}
+
+.theme-light .dead-plant,
+.theme-light .dead-plant::before,
+.theme-light .dead-plant::after {
+  background: #7b6348;
+  box-shadow: none;
+}
+
+.theme-light .message.deficient {
+  border-color: #d7be5d;
+  background: #fff8dd;
+  color: #5c4812;
+  box-shadow: none;
+}
+
+.theme-light .message.dead {
+  border-color: #d79a8c;
+  background: #fff0eb;
+  color: #643125;
+  box-shadow: none;
+}
+
+.theme-light .message.complete {
+  border-color: #91c892;
+  background: #eaf7e7;
+  color: #285f31;
+  box-shadow: none;
+}
+
+.theme-light .seed-name-field input {
+  border-color: #b7ccb0;
+  background: #ffffff;
+  color: #1f2a22;
+  box-shadow: none;
+}
+
+.theme-light .resource-actions input {
+  accent-color: #4f9b55;
+}
+
+.theme-light .lab-root-network::before,
+.theme-light .lab-root-network::after,
+.theme-light .diagram-root {
+  background: #5d94b1;
+  box-shadow: none;
+}
+
+.theme-light .lab-droplets span {
+  background: #4aa8d8;
+  box-shadow: none;
+}
+
+.theme-light .lab-rays span {
+  background: rgba(231, 180, 58, 0.55);
+  box-shadow: none;
+}
+
+.theme-light .lab-air span {
+  border-color: #5d94b1;
+  box-shadow: none;
+}
+
+.theme-light .lab-minerals span {
+  background: #c49b3c;
+  box-shadow: none;
+}
+
+.theme-light .lab-temp-aura,
+.theme-light .lab-shield,
+.theme-light .lab-space-ring {
+  border-color: rgba(83, 132, 88, 0.45);
+  box-shadow: none;
+}
+
+.theme-light .lab-mist {
+  background: repeating-linear-gradient(0deg, rgba(93, 148, 177, 0.2) 0 8px, transparent 8px 18px);
+}
+
+.theme-light .lab-shield {
+  color: #9b4b3c;
+}
+
 @keyframes breathe {
   0%,
   100% {
@@ -2087,4 +2388,38 @@ h1 {
   50% {
     transform: translate(88px, 46px) rotate(95deg);
   }
+}
+
+.theme-light .flower,
+.theme-light .lab-flower {
+  background: #d96595;
+  box-shadow: 13px 0 #d96595, -13px 0 #d96595, 0 13px #d96595, 0 -13px #d96595;
+  animation: none;
+}
+
+.theme-light .sun,
+.theme-light .lab-sun,
+.theme-light .diagram-sun,
+.theme-light .lab-temp-aura,
+.theme-light .lab-shield,
+.theme-light .lab-space-ring {
+  animation: none;
+}
+
+.theme-light .plant,
+.theme-light .leaf,
+.theme-light .flower,
+.theme-light .fruit,
+.theme-light .lab-plant,
+.theme-light .lab-leaf,
+.theme-light .lab-flower,
+.theme-light .lab-fruit,
+.theme-light .pollen-field i,
+.theme-light .seed-dispersal span,
+.theme-light .new-seedlings span,
+.theme-light .lab-droplets span,
+.theme-light .lab-rays span,
+.theme-light .lab-air span,
+.theme-light .lab-minerals span {
+  filter: none;
 }
